@@ -1,11 +1,29 @@
-<div align="center">
+# Orbit Technologies website
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+Built with Next.js and exported as a static site.
 
-  <h1>Built with AI Studio</h2>
+## Local development
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+```bash
+npm ci
+npm run dev
+```
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+## Build
 
-</div>
+```bash
+npm run build
+```
+
+The static site is generated in `out/`. Configure the hosting provider and any
+required base path for the destination repository or deployment environment.
+
+## GitHub Pages
+
+The workflow in `.github/workflows/deploy.yml` builds and deploys the site when
+changes are pushed to `main`. Set **Settings → Pages → Build and deployment →
+Source** to **GitHub Actions**. The site will then be available at
+<https://adityapandey7.github.io/orbitnewwebsite/>.
+
+The quote form is currently a front-end demo and does not send or store
+submissions.
