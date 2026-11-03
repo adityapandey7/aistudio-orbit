@@ -48,156 +48,417 @@ export const pillars: { key: Pillar; name: string; path: string }[] = [
   }
 ];
 
-/** Grouped product navigation for the mega menu (paths verified against the live sitemap). */
-export const megaMenu: { key: Pillar; name: string; path: string; links: [string, string][] }[] = [
+export type MegaMenuItem = {
+  label: string;
+  path: string;
+};
+
+export type MegaMenuSection = {
+  title: string;
+  path: string;
+  items: MegaMenuItem[];
+  viewAllPath?: string;
+};
+
+export type MegaMenuTab = {
+  id: string;
+  title: string;
+  path: string;
+  columns: MegaMenuSection[][];
+  images?: { src: string; alt: string; label?: string }[];
+};
+
+/** Authentic 8-division mega menu matching Orbit India live website and user screenshots */
+export const authenticMegaMenu: MegaMenuTab[] = [
   {
-    "key": "analytical",
-    "name": "Analytical Instruments",
-    "path": "analytical-instruments",
-    "links": [
+    id: "analytical-instruments",
+    title: "Analytical Instruments",
+    path: "analytical-instruments",
+    columns: [
       [
-        "Calorimeters",
-        "calorimeter"
+        {
+          title: "Calorimeters",
+          path: "calorimeter",
+          items: [
+            { label: "Bomb Calorimeters", path: "calorimeter/bomb-calorimeters" },
+            { label: "Semimicro & Solution Calorimeters", path: "calorimeter/semimicro-and-solution-calorimeters" },
+            { label: "Detonation Calorimeter", path: "calorimeter/detonation-calorimeter" },
+            { label: "Power Compensation Reaction Calorimeter", path: "calorimeter" },
+          ],
+        },
+        {
+          title: "Ash Fusion Analyzers",
+          path: "ash-fusion-analyzers",
+          items: [
+            { label: "IF2000G-HDC", path: "ash-fusion-analyzers" },
+            { label: "IF2000G-HDBM", path: "ash-fusion-analyzers" },
+            { label: "EATC16", path: "ash-fusion-analyzers" },
+            { label: "EATC17", path: "ash-fusion-analyzers" },
+          ],
+        },
       ],
       [
-        "Elemental Analyzers",
-        "elemental-analyzers"
+        {
+          title: "Thermogravimetric Analysers",
+          path: "tga-proximate-analyzers",
+          items: [
+            { label: "TGA3000", path: "tga-proximate-analyzers" },
+            { label: "TGA1500", path: "tga-proximate-analyzers" },
+          ],
+        },
+        {
+          title: "Coal and Coke Testing Instruments",
+          path: "coal-and-coke-testing-instruments",
+          items: [
+            { label: "Plastometer PF-12", path: "coal-and-coke-testing-instruments" },
+            { label: "Dilatometer DF-4", path: "coal-and-coke-testing-instruments" },
+            { label: "Minimum Free Space Oven (ASTM & ISO)", path: "coal-and-coke-testing-instruments" },
+            { label: "Volatile Matter Furnace - VMF/ASTM", path: "coal-and-coke-testing-instruments" },
+            { label: "Volatile Matter Furnace - VMF/ISO", path: "coal-and-coke-testing-instruments" },
+            { label: "Free Swelling Index Furnace - FSI", path: "coal-and-coke-testing-instruments" },
+          ],
+        },
       ],
       [
-        "TGA / Proximate Analyzers",
-        "tga-proximate-analyzers"
+        {
+          title: "Elemental Analyzers",
+          path: "elemental-analyzers",
+          items: [
+            { label: "Carbon and Sulfur Analyzers", path: "elemental-analyzers/carbon-and-sulfur-analyzers" },
+            { label: "Fusion Master ONH Analyzer", path: "elemental-analyzers/onh-analyzer" },
+            { label: "CHNS/O Analyzers", path: "elemental-analyzers/chns-analyzers" },
+          ],
+        },
+        {
+          title: "Other Instruments",
+          path: "other-instruments",
+          items: [
+            { label: "Oxygen Flask Combustion Unit (OFCU)", path: "other-instruments" },
+          ],
+        },
       ],
-      [
-        "Ash Fusion Analyzers",
-        "ash-fusion-analyzers"
-      ],
-      [
-        "Coal & Coke Testing",
-        "coal-and-coke-testing-instruments"
-      ],
-      [
-        "Special Analyzers",
-        "special-analyzers"
-      ],
-      [
-        "Precision Balances",
-        "precision-balances"
-      ],
-      [
-        "Gas Generators",
-        "gas-generators"
-      ]
-    ]
+    ],
   },
   {
-    "key": "reactors",
-    "name": "Parr Reactors",
-    "path": "reactors",
-    "links": [
+    id: "reactor-systems",
+    title: "High Temperature High Pressure Reactor Systems",
+    path: "reactors",
+    columns: [
       [
-        "HP/HT Reactors",
-        "reactors/hp-ht-reactors"
+        {
+          title: "Parr Reactors",
+          path: "reactors",
+          items: [],
+        },
+        {
+          title: "HP/HT Reactors",
+          path: "reactors/hp-ht-reactors",
+          items: [
+            { label: "Stirred Reactors", path: "reactors/hp-ht-reactors/stirred-reactors" },
+            { label: "Non-Stirred Pressure Vessels", path: "reactors/hp-ht-reactors/non-stirred-pressure-vessels" },
+          ],
+        },
+        {
+          title: "Customized Reactors",
+          path: "reactors/customized-reactors",
+          items: [
+            { label: "Reactor system for Biofuel and Alternative fuel research", path: "reactors/customized-reactors" },
+            { label: "Horizontal Reactor Systems", path: "reactors/customized-reactors" },
+            { label: "GTL (Gas-to-Liquid) reactor system", path: "reactors/customized-reactors" },
+          ],
+          viewAllPath: "reactors/customized-reactors",
+        },
+        {
+          title: "Sample Preparation Vessels",
+          path: "reactors/sample-preparation-vessels",
+          items: [
+            { label: "Acid Digestion Vessels", path: "reactors/sample-preparation-vessels/acid-digestion-vessels" },
+            { label: "Microwave Digestion Vessel", path: "reactors/sample-preparation-vessels/microwave-digestion-vessels" },
+            { label: "Cell Disruption Vessels", path: "reactors/sample-preparation-vessels/cell-disruption-vessels" },
+          ],
+        },
       ],
       [
-        "Glass Reactors",
-        "reactors/glass-reactors"
+        {
+          title: "Glass Reactors",
+          path: "reactors/glass-reactors",
+          items: [
+            { label: "Series 5100 160-1500ml Glass Reactors", path: "reactors/glass-reactors" },
+          ],
+        },
+        {
+          title: "Reactor Systems for Corrosion Monitoring Studies",
+          path: "reactors/reactor-systems-for-corrosion-monitoring-studies",
+          items: [
+            { label: "High Pressure, High Temperature Rotating Cylinder Electrode (RCE) System", path: "reactors/reactor-systems-for-corrosion-monitoring-studies" },
+            { label: "Rotating cage apparatus", path: "reactors/reactor-systems-for-corrosion-monitoring-studies" },
+            { label: "Apparatus for corrosion Studies", path: "reactors/reactor-systems-for-corrosion-monitoring-studies" },
+          ],
+          viewAllPath: "reactors/reactor-systems-for-corrosion-monitoring-studies",
+        },
+        {
+          title: "Extratex",
+          path: "extratex",
+          items: [
+            { label: "Laboratory", path: "extratex/laboratory" },
+            { label: "Industrial", path: "extratex/industrial" },
+          ],
+        },
       ],
       [
-        "Tubular Reactors",
-        "reactors/tubular-reactors"
+        {
+          title: "Shaker Hydrogenation Apparatus",
+          path: "reactors/shaker-hydrogenation-apparatus",
+          items: [
+            { label: "Series 3910 Shaker Hydrogenation Apparatus", path: "reactors/shaker-hydrogenation-apparatus" },
+            { label: "Series 3920 Shaker Hydrogenation Apparatus", path: "reactors/shaker-hydrogenation-apparatus" },
+          ],
+        },
+        {
+          title: "Tubular Reactors",
+          path: "reactors/tubular-reactors",
+          items: [
+            { label: "5400 Continuous Flow Tubular Reactors", path: "reactors/tubular-reactors" },
+            { label: "5420 Continuous Flow Tubular Reactor with touch Screen", path: "reactors/tubular-reactors" },
+            { label: "5410 Fluidized Bed reactors", path: "reactors/tubular-reactors" },
+          ],
+        },
+        {
+          title: "DENATEC",
+          path: "denatec",
+          items: [
+            { label: "Very High Pressure Chambers", path: "products/high-pressure-chambers" },
+            { label: "Pressure Test Bench", path: "products/pressure-test-bench" },
+            { label: "Pressure Testing Facilities", path: "products/pressure-testing-facility" },
+            { label: "Underwater Applications", path: "products/under-water-applications" },
+          ],
+        },
       ],
-      [
-        "Customized Reactors",
-        "reactors/customized-reactors"
-      ],
-      [
-        "Sample Preparation Vessels",
-        "reactors/sample-preparation-vessels"
-      ],
-      [
-        "Supercritical CO2 Extraction",
-        "reactors/supercritical-co2-extraction-systems"
-      ]
-    ]
+    ],
   },
   {
-    "key": "furnaces",
-    "name": "Furnace & Heating Systems",
-    "path": "furnace-heating-systems",
-    "links": [
+    id: "sample-prep",
+    title: "Sample Preparation Equipment",
+    path: "milling-pulverising",
+    columns: [
       [
-        "Chamber Furnaces",
-        "chamber-furnaces"
+        {
+          title: "Sample Preparation Equipment",
+          path: "milling-pulverising",
+          items: [
+            { label: "Test Sieves", path: "sieving" },
+            { label: "Vibratory Sieve Shaker", path: "sieving" },
+            { label: "Airjet Sieve Shaker", path: "sieving" },
+            { label: "Jaw Crusher", path: "milling-pulverising" },
+            { label: "Hammer Mill", path: "milling-pulverising" },
+            { label: "Vibratory Cup Mill", path: "milling-pulverising" },
+            { label: "Hydraulic Pellet Press", path: "xrf-icp-sample-preparation-equipment" },
+            { label: "Planetary Ball Mill", path: "milling-pulverising/ball-mill" },
+          ],
+        },
       ],
-      [
-        "Tube Furnaces",
-        "tube-furnaces"
-      ],
-      [
-        "High-Temperature Tube Furnaces",
-        "high-temperature-tube-furnace"
-      ],
-      [
-        "Melting Furnaces",
-        "melting-furnaces"
-      ],
-      [
-        "Muffle Furnaces",
-        "muffle-furnace"
-      ],
-      [
-        "Ovens",
-        "ovens"
-      ],
-      [
-        "Retort Furnaces",
-        "retort-furnace"
-      ],
-      [
-        "Sintering Furnaces",
-        "sintering-furnace"
-      ]
-    ]
+    ],
+    images: [
+      {
+        src: "/images/products/ofcu.jpg",
+        alt: "Sample Preparation Equipment",
+        label: "Precision Sample Milling & Sizing",
+      },
+    ],
   },
   {
-    "key": "sample-prep",
-    "name": "Sample Preparation",
-    "path": "",
-    "links": [
+    id: "furnaces",
+    title: "Laboratory & Industrial Furnaces",
+    path: "furnace-heating-systems",
+    columns: [
       [
-        "Milling & Pulverising",
-        "milling-pulverising"
+        {
+          title: "Chamber Furnaces",
+          path: "chamber-furnaces",
+          items: [
+            { label: "Laboratory Chamber Furnaces", path: "chamber-furnaces/laboratory-chamber-furnace" },
+            { label: "Ashing Furnaces", path: "chamber-furnaces/ashing-furnace" },
+            { label: "Industrial Chamber Furnaces", path: "chamber-furnaces/industrial-chamber-furnace" },
+          ],
+        },
+        {
+          title: "Tube Furnaces",
+          path: "tube-furnaces",
+          items: [
+            { label: "Split Tube Furnaces", path: "tube-furnaces/split-tube-furnaces" },
+            { label: "Single Zone Tube Furnaces", path: "tube-furnaces" },
+            { label: "Vacuum Tube Furnaces", path: "tube-furnaces/vacuum-tube-furnaces" },
+          ],
+        },
       ],
       [
-        "Sieving",
-        "sieving"
+        {
+          title: "Specialty Furnaces & Ovens",
+          path: "furnace-heating-systems",
+          items: [
+            { label: "High-Temperature Furnaces", path: "high-temperature-tube-furnace" },
+            { label: "Melting Furnaces", path: "melting-furnaces" },
+            { label: "Muffle Furnaces", path: "muffle-furnace" },
+            { label: "Sintering & Retort Furnaces", path: "sintering-furnace" },
+            { label: "Laboratory Ovens", path: "ovens" },
+          ],
+        },
       ],
-      [
-        "Metal Sample Preparation",
-        "metal-sample-preparation-equipment"
-      ],
-      [
-        "XRF/ICP Sample Preparation",
-        "xrf-icp-sample-preparation-equipment"
-      ]
-    ]
+    ],
+    images: [
+      {
+        src: "/images/products/ecs-8024.jpg",
+        alt: "Laboratory Furnaces",
+        label: "High-Temperature Furnaces up to 1800°C",
+      },
+    ],
   },
   {
-    "key": "crms",
-    "name": "CRM's, SRM's & Lab Accessories",
-    "path": "crms-srms-laboratory-accessories",
-    "links": [
+    id: "gas-generators",
+    title: "Gas Generators",
+    path: "gas-generators",
+    columns: [
       [
-        "Laboratory Accessories",
-        "laboratory-accessories"
+        {
+          title: "Gas Generators",
+          path: "gas-generators",
+          items: [
+            { label: "Hydrogen Gas Generator", path: "gas-generators" },
+            { label: "Nitrogen Gas Generator", path: "gas-generators" },
+            { label: "Zero Air Gas Generator", path: "gas-generators" },
+            { label: "Liquid Nitrogen Gas generator", path: "gas-generators" },
+            { label: "Air Compressor", path: "gas-generators" },
+          ],
+        },
+      ],
+    ],
+    images: [
+      {
+        src: "/images/products/ht-if2000g-hdbm.jpg",
+        alt: "Gas Generators",
+        label: "High-Purity Laboratory Gas Generators",
+      },
+    ],
+  },
+  {
+    id: "precision-balances",
+    title: "Precision Balances & Weighing Scales",
+    path: "precision-balances",
+    columns: [
+      [
+        {
+          title: "Analytical Balances",
+          path: "precision-balances",
+          items: [
+            { label: "Premium-Level Micro/Semi-Micro", path: "premium-level-micro-semi-micro" },
+            { label: "Micro Analytical", path: "micro-analytical" },
+            { label: "Semi-Micro Analytical", path: "semi-micro-analytical" },
+            { label: "Advanced-Level Analytical", path: "advanced-level-analytical" },
+            { label: "Standard-Level Analytical", path: "standard-level-analytical" },
+          ],
+        },
       ],
       [
-        "Certified & Standard Reference Materials",
-        "certified-and-standard-reference-materials"
-      ]
-    ]
-  }
+        {
+          title: "Precision Balances",
+          path: "precision-balances",
+          items: [
+            { label: "Advanced-Level Precision", path: "precision-balances/advanced-level-precision" },
+            { label: "Standard-Level Precision", path: "precision-balances/standard-level-precision" },
+            { label: "Entry-Level Precision", path: "precision-balances/entry-level-precision" },
+          ],
+        },
+      ],
+    ],
+    images: [
+      {
+        src: "/images/products/ht-if2000g-hdbm.jpg",
+        alt: "Precision Balances",
+        label: "Analytical & Precision Weighing",
+      },
+      {
+        src: "/images/products/tga-3000.jpg",
+        alt: "Micro Balances",
+        label: "High Resolution Balances",
+      },
+    ],
+  },
+  {
+    id: "labware",
+    title: "Labware",
+    path: "labware",
+    columns: [
+      [
+        {
+          title: "Labware",
+          path: "labware",
+          items: [
+            { label: "Stirring and Mixing", path: "labware" },
+            { label: "Screw Joints/Components with GL Thread", path: "labware" },
+            { label: "Screw Joints and Components for EX-Protection", path: "labware" },
+            { label: "Screw Joints for Pressures up to 5 Bar", path: "labware" },
+            { label: "Tubing, Films, Tiles", path: "labware" },
+            { label: "Ground Joint Components", path: "labware" },
+            { label: "Temperature Measurement", path: "labware" },
+            { label: "Vessels and Distillation Equipment", path: "labware" },
+          ],
+        },
+      ],
+    ],
+    images: [
+      {
+        src: "/images/products/ht-if2000g-hdbm.jpg",
+        alt: "Labware & Accessories",
+        label: "PTFE & Borosilicate Laboratory Components",
+      },
+    ],
+  },
+  {
+    id: "crms",
+    title: "CRM's, SRM's & Laboratory Accessories",
+    path: "crms-srms-laboratory-accessories",
+    columns: [
+      [
+        {
+          title: "Laboratory Accessories",
+          path: "laboratory-accessories",
+          items: [
+            { label: "Pumps", path: "laboratory-accessories" },
+            { label: "Samplers", path: "laboratory-accessories" },
+            { label: "Containers", path: "laboratory-accessories" },
+            { label: "Industrial & Laboratory Equipment", path: "laboratory-accessories" },
+          ],
+        },
+      ],
+      [
+        {
+          title: "Certified and Standard Reference Materials",
+          path: "certified-and-standard-reference-materials",
+          items: [
+            { label: "Standard Reference Materials (SRMs)", path: "certified-and-standard-reference-materials" },
+            { label: "Coal, Coke & Fuel Standards", path: "certified-and-standard-reference-materials" },
+            { label: "Calibration Standards", path: "certified-and-standard-reference-materials" },
+          ],
+        },
+      ],
+    ],
+    images: [
+      {
+        src: "/images/products/ht-if2000g-hdbm.jpg",
+        alt: "Reference Materials",
+        label: "NABL & NIST Traceable Standards",
+      },
+      {
+        src: "/images/products/6050-automatic-pc-based-calorimeter.jpg",
+        alt: "Combustion Accessories",
+        label: "Parr Oxygen Vessels & Electrodes",
+      },
+    ],
+  },
 ];
+
+// Compatibility export
+export const megaMenu = authenticMegaMenu;
 
 export const categories: Category[] = [
   {
@@ -1154,6 +1415,57 @@ export const categories: Category[] = [
       "Sample Preparation Vessels supplied by Orbit Technologies with installation, training and after-sales support across India."
     ],
     "faq": []
+  },
+  {
+    "path": "denatec",
+    "name": "DENATEC",
+    "parent": "reactors",
+    "pillar": "reactors",
+    "kind": "section",
+    "blurb": "Very High Pressure Chambers, Pressure Test Benches, Testing Facilities, and Underwater Applications.",
+    "guide": [
+      "DENATEC engineers world-class high-pressure test systems operating at extreme hyperbaric conditions up to 10,000+ bar. Applications span aerospace component qualification, deep-sea exploration testing, subsea sensor validation, and defense pressure hull simulations.",
+      "Orbit Technologies provides direct sales, site engineering, high-pressure safety commissioning, and lifetime maintenance support for all DENATEC systems across India."
+    ],
+    "faq": [
+      {
+        "q": "What maximum pressure ratings are available for DENATEC test chambers?",
+        "a": "DENATEC manufactures standard and custom chambers rated from 500 bar up to 10,000+ bar, engineered in high-tensile forged alloys with quick-opening closure systems and automated interlocks."
+      },
+      {
+        "q": "Can DENATEC test benches simulate ocean depth conditions?",
+        "a": "Yes — the hyperbaric underwater testing chambers simulate ocean depths beyond 6,000 meters, complete with temperature regulation and feed-throughs for instrumentation cables and fiber optics."
+      }
+    ]
+  },
+  {
+    "path": "analytical-balances",
+    "name": "Analytical Balances",
+    "parent": "precision-balances",
+    "pillar": "analytical",
+    "kind": "section",
+    "blurb": "Micro, semi-micro, and analytical balances from A&D Weighing for scientific research and precision laboratory compliance.",
+    "guide": [
+      "Analytical balances from A&D Weighing deliver high-precision mass determination down to 0.001 mg for analytical, chemical, and pharmaceutical testing."
+    ],
+    "faq": []
+  },
+  {
+    "path": "labware",
+    "name": "Labware",
+    "parent": null,
+    "pillar": "crms",
+    "kind": "section",
+    "blurb": "PTFE, PFA, and borosilicate labware, stirring components, screw joints, tubing, and distillation equipment.",
+    "guide": [
+      "Orbit Technologies supplies world-class Bohlender (BOLA) and related laboratory PTFE/PFA labware, including magnetic stirring bars, temperature measurement probes, high-pressure screw fittings up to 5 bar, and ATEX-certified ground joints for aggressive chemicals and high-purity applications."
+    ],
+    "faq": [
+      {
+        "q": "Are the PTFE labware components chemically inert?",
+        "a": "Yes, our PTFE and PFA labware products offer near-universal chemical resistance against aggressive acids, alkalis, and organic solvents up to 250°C."
+      }
+    ]
   }
 ];
 

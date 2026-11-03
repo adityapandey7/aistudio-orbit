@@ -1,7 +1,6 @@
 import { cn } from "@/lib/utils";
 
 export function SectionHeading({
-  eyebrow,
   title,
   subtitle,
   align = "left",
@@ -24,10 +23,9 @@ export function SectionHeading({
         className,
       )}
     >
-      {eyebrow && <p className="eyebrow">{eyebrow}</p>}
       <h2
         className={cn(
-          "mt-2 text-2xl font-extrabold tracking-tight sm:text-3xl",
+          "text-2xl font-extrabold tracking-tight sm:text-3xl",
           dark ? "text-white" : "text-[#002f49]",
         )}
       >

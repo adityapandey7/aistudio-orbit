@@ -52,12 +52,7 @@ export function ProductCard({ product }: { product: Product }) {
         )}
       </div>
       <div className="flex flex-1 flex-col p-4">
-        {category && (
-          <p className="text-[11px] font-semibold uppercase tracking-wider text-[#c4620a]">
-            {category.name}
-          </p>
-        )}
-        <h3 className="mt-1 text-sm sm:text-base font-bold leading-snug text-[#002f49] group-hover:text-[#c4620a] transition-colors">
+        <h3 className="text-sm sm:text-base font-bold leading-snug text-[#002f49] group-hover:text-[#c4620a] transition-colors">
           {product.name}
         </h3>
         <p className="mt-1.5 line-clamp-2 flex-1 text-xs sm:text-sm leading-relaxed text-slate-600">

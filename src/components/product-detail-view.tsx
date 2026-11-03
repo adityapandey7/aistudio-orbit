@@ -197,34 +197,8 @@ export function ProductDetailView({
 
           {/* RIGHT: Product Overview & 2x3 Chips Matrix */}
           <div className="flex flex-col">
-            {/* Category / Brand Eyebrow */}
-            <div className="relative z-10 flex flex-wrap items-center gap-2">
-              {category ? (
-                <Link
-                  href={`/${category.path}/`}
-                  className="cursor-pointer inline-flex items-center gap-1.5 rounded-md bg-amber-50 px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-[#c4620a] ring-1 ring-amber-300/80 hover:bg-[#c4620a] hover:text-white hover:ring-[#c4620a] transition-all shadow-xs"
-                >
-                  <span>{category.name}</span>
-                  <ArrowRight className="h-3 w-3" />
-                </Link>
-              ) : (
-                <Link
-                  href="/products/"
-                  className="cursor-pointer inline-flex items-center gap-1.5 rounded-md bg-amber-50 px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-[#c4620a] ring-1 ring-amber-300/80 hover:bg-[#c4620a] hover:text-white hover:ring-[#c4620a] transition-all shadow-xs"
-                >
-                  <span>All Products</span>
-                  <ArrowRight className="h-3 w-3" />
-                </Link>
-              )}
-              {product.brand && (
-                <span className="rounded-md bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-700">
-                  {product.brand}
-                </span>
-              )}
-            </div>
-
             {/* H1 Title */}
-            <h1 className="mt-3 text-3xl font-black tracking-tight text-[#002f49] sm:text-4xl">
+            <h1 className="text-3xl font-black tracking-tight text-[#002f49] sm:text-4xl">
               {product.name}
             </h1>
 
@@ -773,10 +747,7 @@ export function ProductDetailView({
       <section id="quote-section" className="border-t border-slate-200 bg-[#f8fafc] py-14 scroll-mt-20">
         <div className="container-x max-w-4xl">
           <div className="text-center">
-            <span className="inline-block text-xs font-bold uppercase tracking-wider text-[#c4620a]">
-              Direct In-Page Commercial Enquiry
-            </span>
-            <h2 className="mt-2 text-2xl font-black tracking-tight text-[#002f49] sm:text-3xl">
+            <h2 className="text-2xl font-black tracking-tight text-[#002f49] sm:text-3xl">
               Request a quote for the {product.name}
             </h2>
             <p className="mt-2 text-xs sm:text-sm text-slate-600 max-w-2xl mx-auto">
@@ -982,10 +953,7 @@ export function ProductDetailView({
           <div className="container-x">
             <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
               <div>
-                <p className="text-xs font-bold uppercase tracking-wider text-[#c4620a]">
-                  Explore Portfolio
-                </p>
-                <h2 className="mt-1 text-2xl font-black tracking-tight text-[#002f49] sm:text-3xl">
+                <h2 className="text-2xl font-black tracking-tight text-[#002f49] sm:text-3xl">
                   Related Laboratory Instruments
                 </h2>
               </div>
@@ -1008,10 +976,7 @@ export function ProductDetailView({
       <section id="faq-section" className="border-t border-slate-200 bg-[#fbfcfd] py-16 lg:py-20 scroll-mt-20">
         <div className="container-x max-w-3xl">
           <div className="text-center">
-            <span className="inline-block text-xs font-extrabold uppercase tracking-[0.2em] text-[#c4620a]">
-              FAQ
-            </span>
-            <h2 className="mt-2 text-2xl font-black tracking-tight text-[#002f49] sm:text-3xl lg:text-4xl">
+            <h2 className="text-2xl font-black tracking-tight text-[#002f49] sm:text-3xl lg:text-4xl">
               Frequently Asked Questions
             </h2>
             <p className="mt-3 text-xs sm:text-sm leading-relaxed text-slate-600 max-w-xl mx-auto">

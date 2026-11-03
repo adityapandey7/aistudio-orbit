@@ -5894,6 +5894,140 @@ export const products: Product[] = [
     "specs": []
   },
   {
+    "slug": "ash-fusion-determinator-eatc17",
+    "name": "Ash Fusion Determinator - EATC17",
+    "category": "ash-fusion-analyzers",
+    "brand": "Elite Furnaces / Sylab",
+    "origin": "UK / India",
+    "tagline": "High-temperature automatic ash fusion determinator for coal and biomass",
+    "description": "The EATC17 Ash Fusion Determinator is designed for accurate, standard-compliant determination of ash fusibility characteristics in coal, coke, and biomass fuels up to 1600°C with automated optical imaging.",
+    "features": [
+      "Automated optical image recording and thermal profiling",
+      "Compliant with ISO 5416, ASTM D1857, and DIN 51730",
+      "Programmable multi-ramp heating up to 1600°C",
+      "Oxidizing and reducing atmosphere gas controls"
+    ],
+    "applications": [
+      "Thermal Power Stations",
+      "Coal Quality Testing Laboratories",
+      "Biomass & Waste-to-Energy Plants"
+    ],
+    "specs": [
+      ["Maximum Temperature", "1600 °C"],
+      ["Atmosphere Control", "Reducing (CO/CO2) and Oxidizing (Air)"],
+      ["Image Capture", "High-Resolution CCD with Digital Analysis"],
+      ["Test Standards", "ASTM D1857, ISO 5416, BS 1016"]
+    ]
+  },
+  {
+    "slug": "high-pressure-chambers",
+    "name": "Very High Pressure Chambers",
+    "category": "denatec",
+    "brand": "DENATEC",
+    "origin": "Germany / India",
+    "tagline": "Extreme pressure containment chambers rated up to 10,000+ bar",
+    "description": "DENATEC very high pressure chambers are forged and engineered for ultra-high isostatic and hydrostatic pressure testing, research into phase transitions, and extreme-environment material qualification.",
+    "features": [
+      "Working pressures from 1,000 bar to 10,000+ bar",
+      "Forged high-strength alloy construction with pre-stressed wire or shrink ring designs",
+      "Automated quick-opening breech or thread closures with safety interlocks",
+      "Integrated heating, cooling, and instrumentation feedthroughs"
+    ],
+    "applications": [
+      "Aerospace Component Qualification",
+      "Deep-Sea Hyperbaric Simulation",
+      "Ultra-High Pressure Material Synthesis",
+      "Defense & Subsea Systems"
+    ],
+    "specs": [
+      ["Pressure Range", "Up to 10,000 bar (145,000 psi)"],
+      ["Internal Volumes", "100 mL to 250 Litres"],
+      ["Operating Temperature", "-40 °C to +300 °C"],
+      ["Closure Type", "Hydraulic Quick-Clamp / Segmented Breech"]
+    ]
+  },
+  {
+    "slug": "pressure-test-bench",
+    "name": "Pressure Test Bench",
+    "category": "denatec",
+    "brand": "DENATEC",
+    "origin": "Germany / India",
+    "tagline": "Automated hydrostatic and pneumatic test benches for industrial validation",
+    "description": "Turnkey pressure test benches designed for production testing, proof testing, burst testing, and cycle fatigue testing of valves, pipes, hoses, pressure vessels, and hydraulic components.",
+    "features": [
+      "Hydrostatic and gas proof-testing and burst-testing capabilities",
+      "PLC automation with digital data logging and calibration certificates",
+      "Armored safety enclosure with bulletproof poly-carbonate viewing panels",
+      "Rapid fill and high-pressure intensifier pumps"
+    ],
+    "applications": [
+      "Valve & Actuator Manufacturing",
+      "Hose & Coupling Proof Testing",
+      "Oil & Gas Subsea Tree Validation",
+      "Automotive Fuel System Quality Control"
+    ],
+    "specs": [
+      ["Test Medium", "Water, Mineral Oil, Nitrogen, or Helium"],
+      ["Max Test Pressure", "Up to 7,000 bar"],
+      ["Control System", "Touchscreen PLC with automated test cycles"],
+      ["Safety Classification", "Class IV Enclosure with Door Interlocks"]
+    ]
+  },
+  {
+    "slug": "pressure-testing-facility",
+    "name": "Pressure Testing Facilities",
+    "category": "denatec",
+    "brand": "DENATEC",
+    "origin": "Germany / India",
+    "tagline": "Turnkey hyperbaric testing centres and large-scale pressure pits",
+    "description": "Complete engineered pressure test facilities incorporating armored test pits, high-capacity fluid handling, hyperbaric simulation chambers, remote control bunkers, and video surveillance systems.",
+    "features": [
+      "Full turnkey facility design from civil test pit to control room",
+      "Multi-channel sensor acquisition for strain, displacement, temperature, and pressure",
+      "Automated depressurization and safety venting circuits",
+      "Tailored for large subsea assemblies and defense hardware"
+    ],
+    "applications": [
+      "Naval & Defense Certification",
+      "Subsea Equipment Testing (API 6A / 17D)",
+      "High-Pressure Pipeline Infrastructure",
+      "Aerospace Pressure Vessels"
+    ],
+    "specs": [
+      ["Chamber Sizes", "Up to 3.5 m diameter × 8 m length"],
+      ["Simulated Depth", "Up to 10,000 meters sea water (1,000 bar)"],
+      ["Data Acquisition", "Up to 64 high-speed channels"],
+      ["Safety Compliance", "ASME Section VIII, CE PED, DIN standards"]
+    ]
+  },
+  {
+    "slug": "under-water-applications",
+    "name": "Underwater Applications & Hyperbaric Systems",
+    "category": "denatec",
+    "brand": "DENATEC",
+    "origin": "Germany / India",
+    "tagline": "Deep-sea environmental simulation and hyperbaric qualification chambers",
+    "description": "Specialized hyperbaric testing systems engineered to simulate benthic ocean floor conditions, including hydrostatic pressure up to 1,200 bar, controlled temperature from 2°C to 40°C, and ocean salinity.",
+    "features": [
+      "Realistic abyssal depth simulation up to 12,000 meters",
+      "Multi-core electrical and fiber-optic feedthrough penetrators",
+      "Continuous long-term immersion cycle and fatigue testing",
+      "Temperature regulated jackets for full arctic to equatorial water profiling"
+    ],
+    "applications": [
+      "Oceanographic Research Equipment",
+      "Autonomous Underwater Vehicles (AUVs) & ROVs",
+      "Subsea Cables, Connectors & Sensors",
+      "Marine Geotechnology & Benthic Samplers"
+    ],
+    "specs": [
+      ["Simulated Water Depth", "0 to 12,000 meters (1,200 bar)"],
+      ["Temperature Range", "+2 °C to +50 °C chilled/heated"],
+      ["Penetrations", "Coaxial, optical, high-current, and fluid lines"],
+      ["Vessel Material", "Forged duplex stainless steel or nickel alloys"]
+    ]
+  },
+  {
     "slug": "continuous-flow-tubular-reactors-5400",
     "name": "5400 Continuous Flow Tubular Reactors",
     "category": "reactors",

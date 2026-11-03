@@ -2,16 +2,13 @@
 
 import { useState } from "react";
 import {
-  BookOpen,
   CheckCircle2,
   ChevronDown,
   FileText,
-  HelpCircle,
   Layers,
   MapPin,
   ShieldCheck,
   Wrench,
-  Award,
 } from "lucide-react";
 import type { Category } from "@/data/categories";
 import type { Product } from "@/data/products";
@@ -101,11 +98,7 @@ export function CategorySeoSection({
       <div className="container-x">
         {/* Section Header */}
         <div className="max-w-3xl">
-          <div className="inline-flex items-center gap-2 rounded-full bg-slate-200/80 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-slate-700">
-            <BookOpen className="h-3.5 w-3.5 text-[#c4620a]" />
-            Technical Guide & Standards
-          </div>
-          <h2 className="mt-3 text-2xl font-black tracking-tight text-[#002f49] sm:text-3xl lg:text-4xl">
+          <h2 className="text-2xl font-black tracking-tight text-[#002f49] sm:text-3xl lg:text-4xl">
             {seoData.overviewTitle}
           </h2>
           <p className="mt-4 text-base leading-relaxed text-slate-600 sm:text-lg">
@@ -224,11 +217,7 @@ export function CategorySeoSection({
         <div className="mt-12 rounded-2xl border border-slate-200 bg-[#002f49] p-8 text-white shadow-md sm:p-10">
           <div className="grid gap-8 lg:grid-cols-3">
             <div className="lg:col-span-2">
-              <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-[#ffb347]">
-                <Award className="h-3.5 w-3.5" />
-                30+ Years of Indian Engineering Excellence
-              </div>
-              <h3 className="mt-3 text-xl font-bold tracking-tight text-white sm:text-2xl">
+              <h3 className="text-xl font-bold tracking-tight text-white sm:text-2xl">
                 Why Laboratories Across India Partner with Orbit Technologies
               </h3>
               <p className="mt-3 text-sm leading-relaxed text-slate-200 sm:text-base">
@@ -268,11 +257,7 @@ export function CategorySeoSection({
         {allFaqs.length > 0 && (
           <div className="mt-14">
             <div className="text-center max-w-2xl mx-auto">
-              <div className="inline-flex items-center gap-1.5 rounded-full bg-slate-100 px-3 py-1 text-xs font-bold uppercase tracking-wider text-slate-700">
-                <HelpCircle className="h-3.5 w-3.5 text-[#c4620a]" />
-                Frequently Asked Questions
-              </div>
-              <h3 className="mt-2 text-2xl font-black text-[#002f49] sm:text-3xl">
+              <h3 className="text-2xl font-black text-[#002f49] sm:text-3xl">
                 Common Technical Questions: {category.name}
               </h3>
               <p className="mt-2 text-sm text-slate-600">
